@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>News App</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style>
+        body {
+            background-color: #1c1c1e;
+            color: #f5f5f7;
+            font-family: 'Georgia', serif;
+        }
+
+        .jumbotron {
+            background-image: linear-gradient(to right, #3a3a3c, #2c2c2e);
+            padding: 3rem 2rem;
+            border-radius: 0;
+            color: #f5f5f7;
+            text-align: center;
+        }
+
+        h1, h4 {
+            color: #e5e5e7;
+            font-weight: 600;
+        }
+
+        .news-image {
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .news-title {
+            font-size: 1.75rem;
+            color: #d1d1d6;
+            margin-top: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .news-description-title, .news-description {
+            font-size: 1.2rem;
+            color: #f5f5f7;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            text-align: center; /* Center-aligns the description text */
+        }
+
+        .container {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Get the Latest Techcrunch News</h1>
+    </div>
+
+    <div class="container">
+		{% for new, des, i in mylist %}
+		<div class="news-item">
+			<img src="{{ i }}" alt="News Image" class="news-image"> 
+			<h2 class="news-title">{{ new }}</h2>
+			<h4 class="news-description-title">Description:</h4> <!-- Centered description title -->
+			<p class="news-descriptionr">{{ des }}</p>
+		</div>
+		{% empty %}
+			<p class="text-center">No news available at the moment.</p>
+	{% endfor %} 
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6HjBL6iZVb9AI1Ry8CYb4r6r/0Aq14mWrZ3xr9+JmX7nj5oQ5" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy9VScMQ0/h9mWvD5N0gHGzUE6E+ztG8fzpc6dF" crossorigin="anonymous"></script>
+</body>
+</html>
