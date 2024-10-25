@@ -42,6 +42,7 @@ SECRET_KEY=your-secret-key
 NEWSAPI_KEY=your-api-key
 ```
 Generate Secret key: https://djecrety.ir/
+
 Generate news api key: https://newsapi.org/
 
 
